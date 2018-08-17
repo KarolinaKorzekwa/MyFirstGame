@@ -4,16 +4,16 @@ function Furry() {
     this.x = 0;
     this.y = 0;
     this.direction = "right";
-};
+}
 
-Furry();
+// new Furry();
 
 function Coin() {
     this.x = Math.floor(Math.random() * 10);
     this.y = Math.floor(Math.random() * 10);
-};
+}
 
-Coin();
+// new Coin();
 
 
 // 5 konstruktor Game
@@ -39,13 +39,17 @@ function Game() {
          this.furry.x = this.furry.x + 1;
      } else if ( this.furry.direction === "left") {
          this.furry.x = this.furry.x - 1;
-     } else if (this.furry.direction === "up") {
+     } else if (this.furry.direction === "bottom") {
          this.furry.y = this.furry.y + 1;
      } else if (this.furry.direction === "down") {
          this.furry.y = this.furry.y - 1;
      }
- };
 
+ };
+ //czyszczenie widoku
+    this.hideVisibleFurry = function () {
+        document.querySelector('.furry').classList.remove('furry')
+    };
 
  //zad 8
 
@@ -55,14 +59,17 @@ function Game() {
          self.moveFurry()
      },250);
  }
-
+this.furryDirection = function (event) {
+    
+}
+ 
 }
 //zad7
 var newGame = new Game();
 newGame.showFurry();
 newGame.showCoin();
 
-
+console.log('domi');
 
 
 //
