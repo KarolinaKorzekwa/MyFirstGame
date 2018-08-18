@@ -60,8 +60,9 @@ function Game() {
          this.furry.y = this.furry.y + 1;
      }
      this.showFurry();
-     this.checkCoinCollision();
      this.gameOver();
+     this.checkCoinCollision();
+
     };
  //zad 8
 
@@ -103,9 +104,11 @@ function Game() {
     clearInterval(this.idSetInterval);
     var over = document.getElementById('over');
     over.classList.remove('invisible');
+    over.classList.add ('gameOverClass');
     var score = document.querySelector('.endScore');
     var strong = document.querySelector('strong');
-    console.log('gameOver');
+    score.textContent=strong.textContent;
+    this.hideVisibleFurry();
     }
     }
 }
@@ -116,6 +119,7 @@ newGame.showCoin();
 
 //odpalam metode startGame na obiekcie newGame
 newGame.startGame();
+
 
 
 
