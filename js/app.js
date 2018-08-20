@@ -59,9 +59,11 @@ function Game() {
      } else if (this.furry.direction === "down") {
          this.furry.y = this.furry.y + 1;
      }
-     this.showFurry();
+
      this.gameOver();
+     this.showFurry();
      this.checkCoinCollision();
+
 
     };
  //zad 8
@@ -104,7 +106,6 @@ function Game() {
     clearInterval(this.idSetInterval);
     var over = document.getElementById('over');
     over.classList.remove('invisible');
-    over.classList.add ('gameOverClass');
     var score = document.querySelector('.endScore');
     var strong = document.querySelector('strong');
     score.textContent=strong.textContent;
@@ -119,7 +120,6 @@ newGame.showCoin();
 
 //odpalam metode startGame na obiekcie newGame
 newGame.startGame();
-
 
 
 
